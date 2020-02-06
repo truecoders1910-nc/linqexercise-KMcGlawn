@@ -22,10 +22,38 @@ namespace LinqExercise
 
             //Print the Sum and Average of numbers
 
+            Console.WriteLine("Sum of numbers: " + numbers.Sum());
+            Console.WriteLine("");
+            Console.WriteLine("Average of numbers: " + numbers.Average());
+            Console.WriteLine("");
+
             //Order numbers in ascending order and decsending order. Print each to console.
 
-            //Print to the console only the numbers greater than 6
+            Console.WriteLine("Descending Order:");
+            var numberSpace = from num in numbers
+                              orderby num descending
+                              select num;
 
+            foreach (var n in numberSpace)
+            {
+                Console.Write(n);
+            }
+            Console.WriteLine("");
+            Console.WriteLine("");
+
+            Console.WriteLine("Ascending Order:");
+            var numSpace = from num in numbers
+                           orderby num ascending
+                           select num;
+            foreach (var n in numSpace)
+            {
+                Console.Write(n);
+            }
+            Console.WriteLine("");
+            Console.WriteLine("");
+
+            //Print to the console only the numbers greater than 6
+           
             //Order numbers in any order (acsending or desc) but only print 4 of them **foreach loop only!**
 
             //Change the value at index 4 to your age, then print the numbers in decsending order
